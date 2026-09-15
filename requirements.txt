@@ -1,0 +1,47 @@
+# Core Dependencies
+python-dotenv==1.0.0
+pydantic==2.0.0
+
+# NLP and Embeddings
+nltk==3.8.1
+scipy==1.11.0
+scikit-learn==1.3.0
+transformers==4.30.0
+torch==2.0.0
+sentence-transformers==2.2.2
+
+# Web and API
+requests==2.31.0
+aiohttp==3.8.5
+beautifulsoup4==4.12.0
+wikipedia-api==0.5.4
+
+# Data Processing
+pandas==2.0.0
+numpy==1.24.0
+pyyaml==6.0
+
+# Database and Storage
+sqlalchemy==2.0.0
+python-dateutil==2.8.2
+
+# Logging and Monitoring
+loguru==0.7.0
+
+# Testing
+pytest==7.4.0
+pytest-cov==4.1.0
+pytest-asyncio==0.21.0
+
+# Development
+black==23.7.0
+flake8==6.0.0
+mypy==1.4.0
+
+# Documentation
+sphinx==7.0.0
+sphinx-rtd-theme==1.3.0
+
+# Jupyter
+jupyter==1.0.0
+ipython==8.14.0

@@ -1,0 +1,103 @@
+# Domain-Specific Configuration
+
+domains:
+  general:
+    name: "General Text"
+    enabled: true
+    detectors:
+      - semantic_consistency
+      - self_contradiction
+      - fact_checker
+    verifiers:
+      - semantic_verifier
+      - api_verifier
+    confidence_weights:
+      semantic_consistency: 0.3
+      self_contradiction: 0.3
+      fact_checking: 0.4
+    sensitivity: "medium"
+    
+  code:
+    name: "Code Generation"
+    enabled: true
+    detectors:
+      - semantic_consistency
+      - code_syntax_checker
+      - library_existence_checker
+      - api_correctness_checker
+    verifiers:
+      - github_api_verifier
+      - syntax_verifier
+      - semantic_verifier
+    confidence_weights:
+      syntax_validation: 0.25
+      library_validation: 0.25
+      api_correctness: 0.25
+      semantic_consistency: 0.25
+    sensitivity: "high"
+    
+  medical:
+    name: "Medical Content"
+    enabled: true
+    detectors:
+      - semantic_consistency
+      - medical_terminology_checker
+      - drug_interaction_checker
+      - procedure_accuracy_checker
+    verifiers:
+      - pubmed_verifier
+      - medical_kb_verifier
+      - semantic_verifier
+    confidence_weights:
+      terminology: 0.25
+      drug_interactions: 0.35
+      procedure_accuracy: 0.25
+      semantic_consistency: 0.15
+    sensitivity: "very_high"
+    
+  legal:
+    name: "Legal Content"
+    enabled: true
+    detectors:
+      - semantic_consistency
+      - citation_validator
+      - jurisdiction_checker
+      - precedent_accuracy_checker
+    verifiers:
+      - legal_db_verifier
+      - citation_verifier
+      - semantic_verifier
+    confidence_weights:
+      citation_validity: 0.3
+      jurisdiction: 0.2
+      precedent_accuracy: 0.3
+      semantic_consistency: 0.2
+    sensitivity: "very_high"
+    
+  technical:
+    name: "Technical Content"
+    enabled: true
+    detectors:
+      - semantic_consistency
+      - technical_accuracy_checker
+      - standard_compliance_checker
+      - tool_version_checker
+    verifiers:
+      - github_api_verifier
+      - technical_kb_verifier
+      - semantic_verifier
+    confidence_weights:
+      technical_accuracy: 0.3
+      standard_compliance: 0.25
+      tool_compatibility: 0.25
+      semantic_consistency: 0.2
+    sensitivity: "high"
+
+# Global Configuration
+global:
+  claim_extraction_method: "semantic"  # semantic, rule_based, hybrid
+  verification_strategy: "multi_source"  # single_source, multi_source, consensus
+  confidence_calculation: "weighted_average"  # weighted_average, voting, bayesian
+  evidence_ranking: "relevance"  # relevance, recency, source_credibility
+  min_evidence_sources: 1
+  contradiction_resolution: "evidence_based"  # evidence_based, consensus, skeptical
